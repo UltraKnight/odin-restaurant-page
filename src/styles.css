@@ -52,6 +52,18 @@ button {
     background-color: var(--shape-color);
     color: var(--text-secondary);
   }
+
+  &.rounded {
+    border-radius: 50%;
+    padding: 2px;
+    min-width: 30px;
+    height: 30px;
+
+    &:hover {
+      background-color: var(--bg-color-main);
+      color: var(--text-main);
+    }
+  }
 }
 
 footer {
@@ -174,4 +186,27 @@ footer {
     background-color: var(--bg-color-main);
     padding: 20px;
   }
+}
+
+.notification {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--shape-color);
+  color: var(--text-secondary);
+  width: 200px;
+  padding: 20px;
+  border: 2px dashed var(--bg-color-secondary);
+
+  &.visible {
+    opacity: 1;
+  }
+
+  transition: opacity 0.3s ease-out;
 }

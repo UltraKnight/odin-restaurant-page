@@ -3,6 +3,7 @@ import chicken_breast_steak from '../assets/chicken_breast_steak.jpg';
 import penne_pesto from '../assets/penne_pesto.jpg';
 import matcha_cheesecake from '../assets/matcha_cheesecake.jpg';
 import { formatter } from '../utils/currency.js';
+import { showNotification } from './notification.js';
 
 export const createMenu = () => {
   const cardsContent = [
@@ -44,6 +45,8 @@ export const createMenu = () => {
 const createCard = ({ imgSrc, title, description, price }) => {
   const section = document.createElement('section');
   section.setAttribute('class', 'menu-item');
+
+  section.addEventListener('click', showNotification);
 
   const img = document.createElement('img');
   img.src = imgSrc;

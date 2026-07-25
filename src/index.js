@@ -3,6 +3,7 @@ import { createHome } from './pages/home.js';
 import { createMenu } from './pages/menu.js';
 import { createContact } from './pages/contact.js';
 import { createElement } from './utils/dom.js';
+import { createNotification } from './pages/notification.js';
 
 const addFooter = () => {
   const footer = document.createElement('footer');
@@ -11,6 +12,10 @@ const addFooter = () => {
   content.forEach((item) => footer.appendChild(createElement(item)));
 
   document.body.appendChild(footer);
+};
+
+const addNotification = () => {
+  document.body.appendChild(createNotification());
 };
 
 const content = document.getElementById('content');
@@ -50,3 +55,4 @@ navButtons.forEach((button) =>
 
 content.appendChild(createHome());
 addFooter();
+addNotification();
