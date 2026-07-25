@@ -9,10 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "preview": "webpack serve"
+    "preview": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "css-loader": "^7.1.4",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.7",
     "style-loader": "^4.0.0",
