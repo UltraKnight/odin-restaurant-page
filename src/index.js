@@ -15,11 +15,24 @@ const addFooter = () => {
 
 const content = document.getElementById('content');
 const navButtons = document.querySelector('nav').querySelectorAll('button');
+
+let prevButton = navButtons[0]; // home
+prevButton.classList.add('active');
+
 navButtons.forEach((button) =>
   button.addEventListener('click', () => {
+    const btnContent = button.textContent;
+
+    if (btnContent === prevButton.textContent) return;
+
     content.innerHTML = '';
 
-    switch (button.textContent) {
+    prevButton.classList.remove('active');
+    prevButton = button;
+
+    button.classList.add('active');
+
+    switch (btnContent) {
       case 'HOME':
         content.appendChild(createHome());
         break;

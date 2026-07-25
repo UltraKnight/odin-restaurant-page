@@ -43,6 +43,11 @@ button {
   cursor: pointer;
   min-width: 100px;
 
+  &.active {
+    background-color: var(--bg-color-main);
+    color: var(--text-green);
+  }
+
   &:hover {
     background-color: var(--shape-color);
     color: var(--text-secondary);
